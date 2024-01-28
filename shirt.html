@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-Shirt Shop</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+        }
+
+        .product {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>T-Shirt Shop</h1>
+    </header>
+
+    <section>
+        <div class="product">
+            <img src="tshirt1.jpg" alt="T-Shirt 1">
+            <div>
+                <h2>T-Shirt 1</h2>
+                <p>High-quality cotton t-shirt.</p>
+                <p>$19.99</p>
+                <button onclick="addToCart(1)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="tshirt2.jpg" alt="T-Shirt 2">
+            <div>
+                <h2>T-Shirt 2</h2>
+                <p>Comfortable and stylish design.</p>
+                <p>$24.99</p>
+                <button onclick="addToCart(2)">Add to Cart</button>
+            </div>
+        </div>
+        <!-- Add more products as needed -->
+    </section>
+
+    <section>
+        <h2>Shopping Cart</h2>
+        <ul id="cart"></ul>
+    </section>
+
+    <script>
+        // Add your JavaScript code here
+        function addToCart(productId) {
+            // This is a simple example, you'd typically handle cart logic on the server side
+            var productName = document.querySelector(`h2:nth-child(${productId})`).innerText;
+            var cartItem = document.createElement("li");
+            cartItem.textContent = productName;
+            document.getElementById("cart").appendChild(cartItem);
+        }
+    </script>
+</body>
+
+</html>
